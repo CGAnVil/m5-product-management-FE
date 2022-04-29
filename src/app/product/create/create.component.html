@@ -1,0 +1,31 @@
+<h2>Tạo sản phẩm mới</h2>
+<div>
+  <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Tên sản phẩm</label>
+      <input type="text" id="name" formControlName="name" placeholder="Nhập tên sản phẩm">
+    </div>
+    <div>
+      <label for="price">Giá sản phẩm</label>
+      <input type="text" id="price" formControlName="price" placeholder="Nhập giá sản phẩm">
+    </div>
+    <div>
+      <label for="description">Miêu tả sản phẩm</label>
+      <input type="text" id="description" formControlName="description" placeholder="Nhập miêu tả sản phẩm">
+    </div>
+    <div>
+      <label for="category">Danh mục sản phẩm</label>
+      <select formControlName="category" id="category">
+        <option [ngValue]="null" disabled>Chọn một danh mục</option>
+        <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+      </select>
+    </div>
+    <div>
+      <label for="image">Ảnh sản phẩm</label>
+      <input type="file" id="image" (change)="onFileSelect($event)">
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  </form>
+</div>

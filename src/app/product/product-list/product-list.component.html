@@ -1,0 +1,22 @@
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/products/create">tạo sản phẩm mới</a>
+<table>
+  <thead>
+    <th>#</th>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th colspan="2"></th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products, index as i">
+    <td>{{i+1}}</td>
+    <td>{{product.name}}</td>
+    <td><img src="http://localhost:8080/image/{{product.image}}" alt="" width="80px" height="80px" ></td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>
